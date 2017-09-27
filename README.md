@@ -11,7 +11,7 @@ Since VkJk-seq bam files are typically split based on the Jk gene, sets of BAM f
 
 The tool can be run from the command line with the command python analyseVDJ.py
 
-By default, all .bam files in the current directory will be identified and used as input. The current directory will also be searched for .txt files that include the string 'annotation' or 'Annotation' to use as the annotation file. If more than one file is found, the user will be prompted to select the correct one. If none are found an error will be reported. Report/IMGT files will be identified from unique strings present if generated using our VkJk-seq analysis pipeline, or for IMGT Summary files which should have an identifier appended to the start of the name to distinguish samples.
+By default, all .bam files in the current directory will be identified and used as input. The current directory will also be searched for .txt files that include the string 'annotation' or 'Annotation' to use as the annotation file. If more than one file is found, the user will be prompted to select the correct one. If none are found an error will be reported. Report/IMGT files will be identified from unique strings present if generated using our VkJk-seq analysis pipeline, or for IMGT Summary files \(\*1_Summary.txt) which should have an identifier appended to the start of the name to distinguish samples.
 
 Additional directories to search can be listed with the -d flag. All files fulfilling the criteria above that are in the current directory or a directory listed here will be used as input. To specify a particular annotation file (need not contain 'A/annotation') or specific BAM files, please use the -a and -b flags respectively. These must either be in the current directory, or the complete path must be specified for each: only files that are listed will then be used as input and the -d flag will be ignored for that file type. 
 
@@ -39,8 +39,9 @@ prefix_Jk_after_pipeline.pdf - proportion of unique Vk-recombined reads associat
 
 prefix_IMGT_functionality_and_CDR3.pdf - proportion of productive vs non-productive rearrangements and distribution of CDR3 lengths (if IMGT summary files provided)
 
+Four test bam files are provided, with corresponding annotation and report files, and the output files generated if run with the command: python analyseVDJ.py -r -p test
 
-All possible input options are here:
+All possible input options are provided here:
 
 optional arguments:
 
@@ -50,16 +51,15 @@ optional arguments:
                         specify whether library is strand specific, one of: 'same'
                         (default), 'opposing' or 'unstranded'
   
-  -o ORGANISM, --organism ORGANISM
-                        specify organism: 'mouse' or 'mm' (default); 'human' or 'hs'
-  
   -a ANNOTATION, --annotation ANNOTATION
                         annotation file to use; should be a .txt file with
                         columns for Chromosome, Start, End, Name and Strand
                         (if applicable). Please provide complete path unless
                         in current directory. By default will search for a
-                        .txt file containing the word 'annotation' or 'Annotation'. Chromosome
-                        names in annotation file must match those in BAM file.
+                        .txt file containing the word 'annotation' or
+                        'Annotation'. Chromosome names in annotation file must
+                        match those in BAM file, and if format is not 1, 2,
+                        3...X, Y please provide a list using -c flag
   
   -r--reduceNames       reduce length of sample names: will remove lane
                         number, extension, barcode, L00n.R, unique_V from
@@ -70,9 +70,12 @@ optional arguments:
                         reports are not present
   
   -b [BAM [BAM ...]], --bam [BAM [BAM ...]]
-                        optionally list all bam files that should be used
-                        (if this option is specified, please list every file required and provide complete paths unless in current                             directory). If none are listed,
-                        all .bam files in the current directory and those listed with -d will be used
+                        optionally list all bam files that should be used (if
+                        this option is specified, please list every file
+                        required and provide complete paths unless in current
+                        directory). If none are listed, all .bam files in the
+                        current directory and those listed with -d will be
+                        used
   
   -d [DIRECTORIES [DIRECTORIES ...]], --directories [DIRECTORIES [DIRECTORIES ...]]
                         Provide paths to any additional directories to search
@@ -80,15 +83,17 @@ optional arguments:
                         files listed with -a or -b: these must be in the
                         current directory or the complete path must be
                         specified. The current directory will always be
-                        searched, in addition to any specified here
-  
-  -q QUALITY, --quality QUALITY
-                        Specify F if VkJk QC plots are not required. Only
-                        applicable if -k is not False (both default to True)
-  
+                        searched, in addition to any specified here  
+
   -p PREFIX, --prefix PREFIX
                         Please specify a prefix to append to files generated,
                         if required
   
   -l LOG, -log LOG      Specify F if read counts used in heatmap should not be
                         log transformed
+                        
+   -c [CHROMOSOMENAMES [CHROMOSOMENAMES ...]], --chromosomeNames [CHROMOSOMENAMES [CHROMOSOMENAMES ...]]
+                        If format of chromosome names is not 1,2,3...X,Y,MT or
+                        chr1, chr2 etc (max number 22), please provide the
+                        names of each chromosome name present in the
+                        annotation or BAM file, eg seq1 seq2 seq3 etc
