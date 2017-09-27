@@ -40,30 +40,25 @@ prefix_Jk_after_pipeline.pdf - proportion of unique Vk-recombined reads associat
 prefix_IMGT_functionality_and_CDR3.pdf - proportion of productive vs non-productive rearrangements and distribution of CDR3 lengths (if IMGT summary files provided)
 
 
-All options are here:
-
-usage: analyseVDJ.py [-h] [-s STRAND] [-o ORGANISM] [-a ANNOTATION]
-                     [-r--reduceNames] [-k KAPPA] [-b [BAM [BAM ...]]]
-                     [-d [DIRECTORIES [DIRECTORIES ...]]] [-q QUALITY]
-                     [-p PREFIX] [-l LOG]
+All possible input options are here:
 
 optional arguments:
 
   -h, --help            show this help message and exit
   
   -s STRAND, --strand STRAND
-                        specify whether library is strand specific: same
-                        (default), opposing or unstranded
+                        specify whether library is strand specific, one of: 'same'
+                        (default), 'opposing' or 'unstranded'
   
   -o ORGANISM, --organism ORGANISM
-                        specify organism: mouse (mm; default) or human (hs)
+                        specify organism: 'mouse' or 'mm' (default); 'human' or 'hs'
   
   -a ANNOTATION, --annotation ANNOTATION
                         annotation file to use; should be a .txt file with
                         columns for Chromosome, Start, End, Name and Strand
                         (if applicable). Please provide complete path unless
                         in current directory. By default will search for a
-                        .txt file containing the word 'annotation'. Chromosome
+                        .txt file containing the word 'annotation' or 'Annotation'. Chromosome
                         names in annotation file must match those in BAM file.
   
   -r--reduceNames       reduce length of sample names: will remove lane
@@ -76,8 +71,8 @@ optional arguments:
   
   -b [BAM [BAM ...]], --bam [BAM [BAM ...]]
                         optionally list all bam files that should be used
-                        (please provide complete path . If none are listed,
-                        all .bam files in the directory will be used
+                        (if this option is specified, please list every file required and provide complete paths unless in current                             directory). If none are listed,
+                        all .bam files in the current directory and those listed with -d will be used
   
   -d [DIRECTORIES [DIRECTORIES ...]], --directories [DIRECTORIES [DIRECTORIES ...]]
                         Provide paths to any additional directories to search
