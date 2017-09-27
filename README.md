@@ -32,8 +32,11 @@ transformed or untransformed (specify -l F)
 For VkJk-seq:
 
 prefix_pipeline.pdf - read counts over each stage of the VkJk-seq analysis pipeline (depending on reports found may not include all possible stages)
+
 prefix_Jk_before_pipeline.pdf - proportion of reads associated with each Jk 'bait' sequence before running through pipeline (if sorting report provided)
+
 prefix_Jk_after_pipeline.pdf - proportion of unique Vk-recombined reads associated with each Jk gene
+
 prefix_IMGT_functionality_and_CDR3.pdf - proportion of productive vs non-productive rearrangements and distribution of CDR3 lengths (if IMGT summary files provided)
 
 
@@ -45,12 +48,16 @@ usage: analyseVDJ.py [-h] [-s STRAND] [-o ORGANISM] [-a ANNOTATION]
                      [-p PREFIX] [-l LOG]
 
 optional arguments:
+
   -h, --help            show this help message and exit
+  
   -s STRAND, --strand STRAND
                         specify whether library is strand specific: same
                         (default), opposing or unstranded
+  
   -o ORGANISM, --organism ORGANISM
                         specify organism: mouse (mm; default) or human (hs)
+  
   -a ANNOTATION, --annotation ANNOTATION
                         annotation file to use; should be a .txt file with
                         columns for Chromosome, Start, End, Name and Strand
@@ -58,16 +65,20 @@ optional arguments:
                         in current directory. By default will search for a
                         .txt file containing the word 'annotation'. Chromosome
                         names in annotation file must match those in BAM file.
+  
   -r--reduceNames       reduce length of sample names: will remove lane
                         number, extension, barcode, L00n.R, unique_V from
                         sample names before plotting
+  
   -k KAPPA, --kappa KAPPA
                         specify F if this is not a VkJk-seq library, or if
                         reports are not present
+  
   -b [BAM [BAM ...]], --bam [BAM [BAM ...]]
                         optionally list all bam files that should be used
                         (please provide complete path . If none are listed,
                         all .bam files in the directory will be used
+  
   -d [DIRECTORIES [DIRECTORIES ...]], --directories [DIRECTORIES [DIRECTORIES ...]]
                         Provide paths to any additional directories to search
                         for BAM/annotation/report files. Does not apply for
@@ -75,11 +86,14 @@ optional arguments:
                         current directory or the complete path must be
                         specified. The current directory will always be
                         searched, in addition to any specified here
+  
   -q QUALITY, --quality QUALITY
                         Specify F if VkJk QC plots are not required. Only
                         applicable if -k is not False (both default to True)
+  
   -p PREFIX, --prefix PREFIX
                         Please specify a prefix to append to files generated,
                         if required
+  
   -l LOG, -log LOG      Specify F if read counts used in heatmap should not be
                         log transformed
