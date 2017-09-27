@@ -15,6 +15,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 import seaborn as sns
 import argparse
 import sys
+import io
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-s','--strand',help = 'specify whether library is strand specific, one of: \'same\' (default), \'opposing\' or \'unstranded\'')
@@ -43,8 +44,8 @@ else:
     prefix=''
 
 #file to print to for .txt output
-f = open(prefix+'out.txt','w+')
-print('analyseVDJ output',file = f)
+f = open(prefix+'out.txt','w')
+f.write('analyseVDJ output')
 f.close()
 
 outfile = open(prefix+'out.txt','a')
