@@ -1,0 +1,40 @@
+Total number of sequences processed: 9178720
+The correct barcode ATTTCCAGCTTGGTGCCTCCACCGAA was detected in 2003738 cases
+Sequence downstream of the bait extracted (20bp or longer): 1988321 (99.23%)
+Sequence downstream of the bait was shorter than 20bp: 15417
+
+Read 1 known sequence 1 (GACTCGT): 831218
+Read 1 known sequence 2 (CTGCTCCT): 1085877
+Read 1 poor tag sequence: 71226
+V side sequence was shorter than 100bp: 0
+
+Total number of sequences processed: 9178720
+The correct barcode TTTCCAGCTTGGTCCCCCCTCCGAAC was detected in 2998006 cases
+Sequence downstream of the bait extracted (20bp or longer): 2971891 (99.13%)
+Sequence downstream of the bait was shorter than 20bp: 26115
+
+Read 1 known sequence 1 (GACTCGT): 1247845
+Read 1 known sequence 2 (CTGCTCCT): 1614368
+Read 1 poor tag sequence: 109678
+V side sequence was shorter than 100bp: 0
+
+Total number of sequences processed: 9178720
+The correct barcode TTATTTCCAACTTTGTCCCCGAGCCGAA was detected in 2140412 cases
+Sequence downstream of the bait extracted (20bp or longer): 2127108 (99.38%)
+Sequence downstream of the bait was shorter than 20bp: 13304
+
+Read 1 known sequence 1 (GACTCGT): 888456
+Read 1 known sequence 2 (CTGCTCCT): 1164969
+Read 1 poor tag sequence: 73683
+V side sequence was shorter than 100bp: 0
+
+Total number of sequences processed: 9178720
+The correct barcode TCCAGCTTGGTCCCAGCACCGAA was detected in 1832327 cases
+Sequence downstream of the bait extracted (20bp or longer): 1820501 (99.35%)
+Sequence downstream of the bait was shorter than 20bp: 11826
+
+Read 1 known sequence 1 (GACTCGT): 757699
+Read 1 known sequence 2 (CTGCTCCT): 999595
+Read 1 poor tag sequence: 63207
+V side sequence was shorter than 100bp: 0
+

@@ -1,0 +1,106 @@
+analyseVDJ output['analyseVDJ.py', '-r', '-p', 'test']
+The following directories will be searched:
+ ['/mnt/c/Users/louis/Dropbox/python/analyseVDJ']
+The following unique samples were identified:
+Sample 1 : lane1_test1_CAGATC
+Sample 2 : lane1_test2_ACTTGA
+lane1_test1_CAGATC : ['lane1_test1_CAGATC_L001_R.Jk2.unique_V.bam', 'lane1_test1_CAGATC_L001_R.Jk4.unique_V.bam']
+lane1_test2_ACTTGA : ['lane1_test2_ACTTGA_L001_R.Jk2.unique_V.bam', 'lane1_test2_ACTTGA_L001_R.Jk4.unique_V.bam']
+Annotation file identified:
+ /mnt/c/Users/louis/Dropbox/python/analyseVDJ/test_annotations.txt
+Total read counts for each bam file:
+ {'lane1_test1_CAGATC_L001_R.Jk2.unique_V.bam': 1541, 'lane1_test1_CAGATC_L001_R.Jk4.unique_V.bam': 747, 'lane1_test2_ACTTGA_L001_R.Jk2.unique_V.bam': 1380, 'lane1_test2_ACTTGA_L001_R.Jk4.unique_V.bam': 643}
+Total read counts for each sample:
+ {'lane1_test1_CAGATC': 2288, 'lane1_test2_ACTTGA': 2023}
+Assuming data is VkJk-seq - searching for reports
+Identified sorting report(s):
+ ['/mnt/c/Users/louis/Dropbox/python/analyseVDJ/lane1_test1_CAGATC_L001_R.sorting_report.txt', '/mnt/c/Users/louis/Dropbox/python/analyseVDJ/lane1_test2_ACTTGA_L001_R.sorting_report.txt']
+Identified misprime correction report(s):
+ ['/mnt/c/Users/louis/Dropbox/python/analyseVDJ/lane1_test1_CAGATC_L001_R.mispriming_correction.txt', '/mnt/c/Users/louis/Dropbox/python/analyseVDJ/lane1_test2_ACTTGA_L001_R.mispriming_correction.txt']
+Identified V report(s):
+ ['/mnt/c/Users/louis/Dropbox/python/analyseVDJ/lane1_test1_CAGATC_L001_R.all_Jks.V_report.txt', '/mnt/c/Users/louis/Dropbox/python/analyseVDJ/lane1_test2_ACTTGA_L001_R.all_Jks.V_report.txt']
+Read counts at each stage of pipeline:
+       Misprime corrected Total reads  Total with bait  Downstream bait >20bp  \
+test1             555950    10268779       10086870.0             10001905.0   
+test2             519468     9178720        8974483.0              8907821.0   
+
+       Molecular identifier V read alignment Deduplicated  \
+test1             9616817.0          7509378      1465280   
+test2             8590027.0          6666309      1205378   
+
+       Total unique over V genes Sample  
+test1                     2288.0  test1  
+test2                     2023.0  test2  
+Reads per Jk gene identified from baits:
+        test1    test2
+Jk1  2234985  2003738
+Jk2  3270087  2998006
+Jk4  2504484  2140412
+Jk5  2077314  1832327
+Unique Vk-recombined reads per Jk gene:
+       test1   test2
+Jk2  1541.0  1380.0
+Jk4   747.0   643.0
+IMGT summary files identified:
+ ['/mnt/c/Users/louis/Dropbox/python/analyseVDJ/test1.1.1_Summary.txt', '/mnt/c/Users/louis/Dropbox/python/analyseVDJ/test2.1.1_Summary.txt']
+The following sets of samples were identified for IMGT reports:
+/mnt/c/Users/louis/Dropbox/python/analyseVDJ/test1 ['/mnt/c/Users/louis/Dropbox/python/analyseVDJ/test1.1.1_Summary.txt']
+/mnt/c/Users/louis/Dropbox/python/analyseVDJ/test2 ['/mnt/c/Users/louis/Dropbox/python/analyseVDJ/test2.1.1_Summary.txt']
+Raw read counts over annotations:
+             test1_Jk2  test1_Jk4  test2_Jk2  test2_Jk4
+Name                                                  
+2-137             406        143        342        142
+1-136pg             0          0          0          0
+1-135             305        110        276        103
+14-134-1pg          0          0          0          0
+17-134pg            0          0          0          0
+1-133              25         19         42         12
+1-132              49         32         48         31
+1-131p              0          0          0          0
+14-130p            44         40         58         37
+9-129              85         64         87         42
+9-128pg            20         10          9         10
+17-127             87         65         62         42
+14-126-1pg          0          0          0          0
+14-126pg          162        130        172        108
+11-125            297        114        246        105
+9-124              61         20         38         11
+Normalised read counts over annotations:
+              test1_Jk2   test1_Jk4   test2_Jk2   test2_Jk4
+Name                                                      
+2-137       382.488199  134.718750  364.399901  151.300544
+1-136pg       0.000000    0.000000    0.000000    0.000000
+1-135       287.337194  103.629808  294.077113  109.746169
+14-134-1pg    0.000000    0.000000    0.000000    0.000000
+17-134pg      0.000000    0.000000    0.000000    0.000000
+1-133        23.552229   17.899694   44.750865   12.785961
+1-132        46.162369   30.146853   51.143846   33.030400
+1-131p        0.000000    0.000000    0.000000    0.000000
+14-130p      41.451923   37.683566   61.798814   39.423381
+9-129        80.077579   60.293706   92.698220   44.750865
+9-128pg      18.841783    9.420892    9.589471   10.654968
+17-127       81.961757   61.235795   66.060801   44.750865
+14-126-1pg    0.000000    0.000000    0.000000    0.000000
+14-126pg    152.618444  122.471591  183.265447  115.073653
+11-125      279.800481  107.398164  262.112210  111.877163
+9-124        57.467439   18.841783   40.488878   11.720465
+Log2 transformed, normalised read counts over annotations:
+             test1_Jk2  test1_Jk4  test2_Jk2  test2_Jk4
+Name                                                  
+2-137        8.583038   7.084476   8.513332   7.250777
+1-136pg      0.000000   0.000000   0.000000   0.000000
+1-135        8.171613   6.709150   8.204948   6.791113
+14-134-1pg   0.000000   0.000000   0.000000   0.000000
+17-134pg     0.000000   0.000000   0.000000   0.000000
+1-133        4.617782   4.240291   5.515727   3.785128
+1-132        5.559564   4.961015   5.704425   5.088752
+1-131p       0.000000   0.000000   0.000000   0.000000
+14-130p      5.407758   5.273649   5.972665   5.337118
+9-129        6.341231   5.937667   6.549950   5.515727
+9-128pg      4.310470   3.381407   3.404559   3.542873
+17-127       6.374375   5.959673   6.067398   5.515727
+14-126-1pg   0.000000   0.000000   0.000000   0.000000
+14-126pg     7.263208   6.948035   7.525642   6.858897
+11-125       8.133402   6.760197   8.039534   6.818610
+9-124        5.869561   4.310470   5.374653   3.669079
+Using log2-transformed, normalised read counts for heatmap
