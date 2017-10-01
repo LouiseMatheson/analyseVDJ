@@ -1,5 +1,5 @@
 # analyseVDJ
-Tool for initial QC and analysis of VDJ-seq repertoire data
+Tool for initial QC and analysis of VDJ-seq repertoire data (python3)
 
 This tool takes in a set of bam files and an annotation file, and quantifies reads over the annotations. It then normalises, optionally log transforms, and clusters those datasets based on both samples (eg for checking whether replicates cluster) and annotations, and generates a heatmap to give an overview of the read counts for each sample. 
 
