@@ -59,7 +59,7 @@ optional arguments:
                         .txt file containing the word 'annotation' or
                         'Annotation'. Chromosome names in annotation file must
                         match those in BAM file, and if format is not 1, 2,
-                        3...X, Y please provide a list using -c flag
+                        3...X, Y or chr1, chr2 etc please provide a list using -c flag
   
   -r--reduceNames       reduce length of sample names: will remove lane
                         number, extension, barcode, L00n.R, unique_V from
