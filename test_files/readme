@@ -1,0 +1,3 @@
+These files can be used to test the analyseVDJ pipeline. 
+
+Output files are provided to give an example of the output if run with python analyseVDJ.py -r -p test
