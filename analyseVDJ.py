@@ -19,7 +19,7 @@ import io
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-s','--strand',help = 'specify whether library is strand specific, one of: \'same\' (default), \'opposing\' or \'unstranded\'')
-parser.add_argument('-a','--annotation',help = 'annotation file to use; should be a .txt file with columns for Chromosome, Start, End, Name and Strand (if applicable). Please provide complete path unless in current directory. By default will search for a .txt file containing the word \'annotation\' or \'Annotation\'. Chromosome names in annotation file must match those in BAM file, and if format is not 1, 2, 3...X, Y please provide a list using -c flag')
+parser.add_argument('-a','--annotation',help = 'annotation file to use; should be a .txt file with columns for Chromosome, Start, End, Name and Strand (if applicable). Please provide complete path unless in current directory. By default will search for a .txt file containing the word \'annotation\' or \'Annotation\'. Chromosome names in annotation file must match those in BAM file, and if format is not 1, 2, 3...X, Y or chr1, chr2 etc please provide a list using -c flag')
 parser.add_argument('-r' '--reduceNames',dest = 'reduceNames', help = 'reduce length of sample names: will remove lane number, extension, barcode, L00n.R, unique_V from sample names before plotting', action = 'store_true',default = False )
 parser.add_argument('-k','--kappa', dest = 'kappa',help = 'specify F if this is not a VkJk-seq library, or if reports are not present')
 parser.add_argument('-b','--bam',dest = 'bam',nargs='*',help = 'optionally list all bam files that should be used (if this option is specified, please list every file required and provide complete paths unless in current directory). If none are listed, all .bam files in the current directory and those listed with -d will be used')
@@ -128,8 +128,6 @@ for c in ['Chromosome','Start','End']:
     else:
         print('Unable to identify column for',c,'\nPlease use annotation file with columns labelled \'Chromosome\', \'Start\', \'End\'')
         quit()
-#change chr1 etc format chromosome names to be consistent with default
-annotations['Chromosome'].replace(to_replace='chr', value='',regex = True, inplace=True)
 
 if args.strand != 'unstranded':
     if 'Strand' not in annotations.columns:
@@ -171,7 +169,7 @@ if 'Name' not in annotations.columns:
 if args.chromosomeNames:
     chrs = args.chromosomeNames
 else:
-    chrs = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "X", "Y", "MT"]
+    chrs = ["chr1", "chr2", "chr3", "chr4", "chr5", "chr6", "chr7", "chr8", "chr9", "chr10", "chr11", "chr12", "chr13", "chr14", "chr15", "chr16", "chr17", "chr18", "chr19", "chr20", "chr21", "chr22", "chrX", "chrY", "chrMT","1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "X", "Y", "MT"]
 
 #Now convert to genomic array
 if args.strand == 'unstranded':
